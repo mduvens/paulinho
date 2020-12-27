@@ -4,27 +4,25 @@ from app.models import test
 import io 
 import random
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-from matplotlib.figure import Figure
+import requests
+import threading
 
 @app.route('/')
 @app.route('/index')
 def index():
-    x = test.multiply()
-    return render_template("inicio.html", value=x)
+    x = 0
+    def getX():
+        x = test.getRandom()
+        timer = threading.Timer(10,index)
+        timer.start()
+    return render_template("inicio.html", value=getX())
     
-@app.route('/plot.png')
+@app.route('/veadoPaulo')
 def plot_png():
-    fig = create_figure()
+    fig = test.create_figure()
     output = io.BytesIO()
     FigureCanvas(fig).print_png(output)
     return Response(output.getvalue(), mimetype='image/png')
 
-def create_figure():
-    fig = Figure()
-    axis = fig.add_subplot(1, 1, 1)
-    xs = range(100)
-    ys = [random.randint(1, 50) for x in xs]
-    axis.plot(xs, ys)
-    return fig
 if __name__ == '__main__':
     app.run()
