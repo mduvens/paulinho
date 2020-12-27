@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="main">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a9082643a6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap" rel="stylesheet"> 
+    <title>Street Workout</title>
+    <style>
+        html,
+        body {
+            /* margin: 0 auto; */
+            background: var(--bg);
+            overflow-x: hidden;
+            font-family: 'Muli', sans-serif !important;
+        }
+        html.transition,
+        html.transition *,
+        html.transition *:before,
+        html.transition *:after {
+        transition: all 1750ms !important;
+        transition-delay: 0 !important;
+        }
+
+        .navbar {
+            background: rgb(0, 0, 0);
+            text-align: center;
+        }
+
+        .navbar navbar-nav {
+            float: right;
+        }
+
+        .nav-link {
+            color: white;
+            font-size: 2em;
+
+        }
+
+        .nav-link {
+            margin-inline: 1vw;
+        }
+        .workouts {
+            width: 20vh;
+            margin-inline: 100px;
+        }
+
+        .display-4 {
+            text-shadow: 2px 2px 2px black;
+        }
+    </style>
+</head>
+
+<body>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/animate.css">
+
+    <nav class="navbar navbar-expand-md navbar-dark ">
+        <span class="navbar-brand mb-0 h1" id="b2750">
+            <a href="appA" class="text-white text-decoration-none" style="font-size: 1.5em;"><img
+                    src="/static/img/muscleSVG.jpg" width="50" height="50" class="d-inline-block align-top" alt="">Athletik</a>
+        </span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse bg-black" id="navbarNavDropdown">
+            <div class="navbar-nav text-center ml-auto">
+                <a class="nav-item nav-link  " href="/" id="navlinkHome">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link " href="#" id="navlinkApp">App</a>
+
+                <a class="nav-item nav-link " href="/workouts" id="navlinkWorkouts">Workouts</a>
+                <a class="nav-item nav-link " href="/about" id="navlinkAboutus">About us</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid bg-black">
+        <div class="form-row padding ">
+            <div class="col-12 col-md-6 text-center text-md-right mt-5 p-5 text-white">
+                <h1 class="display-4 animate__animated animate__zoomIn">Athletik</h1>
+                <p class="lead mb-5 animate__animated animate__zoomIn">Get the free app now!</p>
+
+                <button class="btn btn-primary animate__animated animate__zoomIn"><i class="fab fa-apple"></i> App Store</button>
+                <button class="btn btn-success animate__animated animate__zoomIn"><i class="fab fa-android"></i> Play Store</button>
+
+            </div>
+            <div class="col-12 col-md-6 mt-md-5 text-center text-md-left animate__animated animate__fadeIn animate__slower">
+                <img src="/static/img/handphone1.png" alt="handphone" class="w-50">
+            </div>
+        </div>
+    </div>
+
+    <section class="">
+
+        <!-- BACKGROUND OVERLAY -->
+
+
+        <div class="container-fluid ">
+            <h1 class="display-3 mb-5 text-center my-5 wow bounceInUp" style="font-size: 3em; font-weight:500;">Every tutorial you need</h1>
+
+            <div class="row padding text-center justify-content-center my-5">
+
+                <div class="col-12 col-md-4  my-3 text-center w-auto  wow  bounceInLeft">
+                    <h1>Pushups</h1>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/IODxDxX7oi4"
+                            class=".embed-responsive-item" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4  my-3 text-center wow  bounceInRight">
+                    <h1>Pullups</h1>
+                    <div class="embed-responsive embed-responsive-16by9 ">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/eGo4IYlbE5g"
+                            class=".embed-responsive-item" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+            <h1 class="display-3 mb-5 text-center my-5" style="font-size: 3em;">And much more!</h1>
+        </div>
+    </section>
+    <div class="container-fluid padding bg-black">
+        <hr class="mt-5 d-inline-block">
+        <div class="row text-center padding text-white">
+            <div class="col-12 col-md-5 my-2 my-md-5 text-center text-md-right wow  bounceInLeft ">
+                <div class="container-fluid mt-md-5  mb-5">
+                    <h1 class="display-3" style="font-size:2em;"><b>KEEP TRACK OF YOUR PROGRESS</b> </h1>
+                    <p class="lead">See your progress throughout the time. This includes graphs with how good you're exercising as well as your health progress.</p>
+                </div>
+                <div class="container-fluid mt-5 mb-mb-5">
+                    <h1 class="display-3 " style="font-size:2em;"><b>ADD CUSTOM MUSIC</b> </h1>
+                    <p class="lead">Athletik lets you add your own music to the app so it's easier to play it when
+                        working out.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-2 my-0 wow fadeInDown">
+                <img src="/static/img/iphonexx.png" alt="" class="w-100 mt-5 mb-0">
+
+            </div>
+            <div class="col-12 col-md-5 my-5 text-center text-md-left wow bounceInRight">
+                <div class="container-fluid my-5">
+                    <h1 class="display-3" style="font-size:2em;"><b>UPLOAD YOU OWN WORKOUTS</b> </h1>
+                    <p class="lead">Athletik incorporates the ability to create your own account and upload your
+                        favorite workouts.</p>
+                </div>
+                <div class="container-fluid my-5">
+                    <h1 class="display-3 " style="font-size:2em;"><b>WORKOUT WHENEVER & WHEREVER</b> </h1>
+                    <p class="lead">Make sure you have your workouts everywhere you go.</p>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <h2 class="display-4 text-white-50">Get it today, it's free!</h2>
+            <button class="btn btn-primary animate__animated animate__zoomIn mt-3"><i class="fab fa-apple"></i> App Store</button>
+            <button class="btn btn-success animate__animated animate__zoomIn mt-3"><i class="fab fa-android"></i> Play Store</button>
+        </div>
+       
+        <hr class="mb-5 d-inline-block">
+
+    </div>
+    <!-- <footer>
+        <div class="container-fluid padding bg-black">
+            <div class="row text-center text-white">
+                <div class="col-12 mt-3">
+                    <p> 9111111111</p>
+                    <p> contactus@athletik.pt</p>
+                    <p> Cascais, Lisboa, PORTUGAL</p>
+
+                </div>
+            </div>
+        </div>
+    </footer> -->
+    <footer>
+        <div class="container-fluid  ">
+            <div class="row bg-black text-center text-white">
+                <div class="col-12">
+                    <p> &copy; Copyright 2020 Athletik</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/static/js/wow.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

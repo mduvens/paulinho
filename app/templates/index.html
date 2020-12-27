@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="main">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <script src="https://kit.fontawesome.com/a9082643a6.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap" rel="stylesheet"> 
+    <title>Street Workout</title>
+    <style>
+        html,body {
+            /* margin: 0 auto; */
+            background: var(--bg);
+            overflow-x: hidden;
+            text-shadow: 1px 1px 1px  black;
+            font-family: 'Muli',sans-serif !important;
+        }
+
+        .navbar {
+            background: rgb(0, 0, 0);
+            text-align: center;
+        }
+
+        .navbar navbar-nav {
+            float: right;
+        }
+
+        .nav-link {
+            color: white;
+            font-size: 2em;
+
+        }
+
+        .nav-link {
+            margin-inline: 1vw;
+        }
+
+
+        .carousel-item {
+            height: 80vh;
+            background-size: cover;
+
+        }
+
+        .display-4 {
+            text-shadow: 2px 2px 2px black;
+        }
+       
+        #mainContainer{
+            height: 91vh;
+            background-image:url("/static/img/planchePush.jpg");
+            background-size: cover;
+            background-position: center;
+            
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+
+ <nav class="navbar navbar-expand-md navbar-dark ">
+        <span class="navbar-brand mb-0 h1" id="b2750">
+            <a href="/" class="text-white text-decoration-none" style="font-size: 1.5em;"><img src="/static/img/muscleSVG.jpg" width="50" height="50" class="d-inline-block align-top" alt="">Athletik</a>
+        </span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse bg-black" id="navbarNavDropdown">
+            <div class="navbar-nav text-center ml-auto">
+                <a class="nav-item nav-link  " href="#" id="navlinkHome">Home<span
+                        class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link " href="appA" id="navlinkApp">App {{value["x"]}}</a>
+
+                <a class="nav-item nav-link " href="/workouts" id="navlinkWorkouts">Workouts</a>
+                <a class="nav-item nav-link " href="/about" id="navlinkAboutus">About us</a>
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- <div class="container-fluid bg-black " id="mainContainer">
+        <div class="form-row padding">
+            <div class="col-12 d-none d-lg-block my-5"></div>
+            <div class="col-2 d-none d-lg-block text-center text-md-left mt-5 p-5 text-white"> 
+            </div>
+            <div class="col-12 col-md-7 text-center text-md-left mt-5 p-5 text-white">
+                <h1 class="display-4 animate__animated animate__slideInRight" >Get fit & healthy.</h1>
+                <p class="lead mb-5 animate__animated animate__slideInLeft">Start your bodyweight journey today!</p>
+                <a href="/appA"><button class="btn btn-outline-light animate__animated animate__slideInUp">Learn More</button></a>
+            </div>
+        </div>
+    </div> -->
+    
+    
+    <!-- <footer>
+        <div class="container-fluid padding bg-black">
+            <div class="row text-center text-white">
+                <div class="col-12 mt-3">
+                    <p> 9111111111</p>
+                    <p> athletik@streetworkout.pt</p>
+                    <p> Cascais, Lisboa, PORTUGAL</p>
+
+                </div>
+            </div>
+        </div>
+    </footer> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
