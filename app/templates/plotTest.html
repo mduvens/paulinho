@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block header %}
+
+  <H1 class="header">PLOT</H1>
+  
+{% endblock %}
+{% block content %}
+<div class="contentMenu" id="contentMenu">
+    <div class="fixedDiv">
+        <a href="#testPlot" class="gotoDiv menuLink"><h1 >Test</h1></a>
+    </div>
+
+</div>
+    <div class="contentSubDiv">
+        <div id="testPlot">
+            <h1 class="header">Test Plot</h1>
+            <img class="flexImg"src="/getImage" alt="PLOT">
+            <a id="btnRefresh" href="/plotTest"><button style="display: none;">REFRESH</button></a>
+        </div>
+      
+    </div>
+      
+            <script>
+               setInterval(() => {
+                    document.getElementById('btnRefresh').click()
+                },10000)
+            </script>
+ 
+
+{% endblock %}

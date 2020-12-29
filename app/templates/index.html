@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link
         rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/> -->
     <script src="https://kit.fontawesome.com/a9082643a6.js" crossorigin="anonymous"></script>
     <link type="text/css" rel="stylesheet" href="/static/css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap" rel="stylesheet"> 
@@ -16,83 +16,40 @@
     <style>
         html,body {
             /* margin: 0 auto; */
-            background: var(--bg);
-            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
             text-shadow: 1px 1px 1px  black;
             font-family: 'Muli',sans-serif !important;
         }
-
-        .navbar {
-            background: rgb(0, 0, 0);
-            text-align: center;
-        }
-
-        .navbar navbar-nav {
-            float: right;
-        }
-
-        .nav-link {
-            color: white;
-            font-size: 2em;
-
-        }
-
-        .nav-link {
-            margin-inline: 1vw;
-        }
-
-
-        .carousel-item {
-            height: 80vh;
-            background-size: cover;
-
-        }
-
-        .display-4 {
-            text-shadow: 2px 2px 2px black;
-        }
-       
-       
 
     </style>
 </head>
 
 <body>
-
-
- <nav class="navbar navbar-expand-md navbar-dark ">
-        <span class="navbar-brand mb-0 h1" id="b2750">
-            <a href="/" class="text-white text-decoration-none" style="font-size: 1.5em;"><img src="/static/img/muscleSVG.jpg" width="50" height="50" class="d-inline-block align-top" alt="">Athletik</a>
-        </span>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse bg-black" id="navbarNavDropdown">
-            <div class="navbar-nav text-center ml-auto">
-                <a class="nav-item nav-link  " href="#" id="navlinkHome">Home<span
-                        class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link " href="/" id="navlinkApp">App {{value}}</a>
-
-                <a class="nav-item nav-link " href="/" id="navlinkWorkouts">Workouts</a>
-                <a class="nav-item nav-link " href="/" id="navlinkAboutus">About us</a>
-            </div>
+    <div class="mainGrid " id="gridC">
+        <div class="item navbar" id="header"> 
+            <a href="/" class="menuLink"><h1>Home</h1></a>
+            <a href="/plotTest" class="menuLink"><h1>Plot</h1></a>
+            
         </div>
-    </nav>
-    {% block content %}
+        <!-- <div class="item" id="menu"> -->
+          
 
-    {% endblock %}
+        <!-- </div> -->
+        <div class="contentDiv" id="main"> 
+            {% block content %}
 
-  
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-    </script>
+            {% endblock %}
+        </div>  
+        <!-- <div class="item" id="right"><h1>Right</h1></div> -->
+        <div class="item whiteText" id="footer">
+           <h5> &copy; Uníversidade Lusíada de  Lisboa 2020 - Manuel Gonçalves</h5>
+        </div>
+      </div>
+
+ 
+
 </body>
 
 </html>
