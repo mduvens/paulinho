@@ -1,126 +1,177 @@
+.whiteText {
+    color: white;
+    text-decoration: none;
+}
 
-        .whiteText{
-            color: white;
-            text-decoration: none;
-        }
-        .fixedDiv{
-            position: fixed;
-        }
-         .header{
-             font-size: 6vh;
-             color: red;
-             transition: all 1s;
-             cursor: default;
-         }
-         .header:hover{
-             transform:  scale(1.1);
-         }
-         .header2{
-            font-size: 4vh;
-            color: green;
-            margin-top: 8vh;
-        }
-         .item{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-       #header { grid-area: header;  background-color: black; }
-       /* #menu { grid-area: menu;   background-color: blue; } */
-       #main { grid-area: main;  background-color: white; }
-       /*#right { grid-area: right; }*/
-       #footer { grid-area: footer; background-color: black; }
-        .navbar {
-            justify-content: center;
-            flex-direction: row;
-            padding-right: 2vw;
+.fixedDiv {
+    position: fixed;
+}
 
-        }
-        .menuLink{
-            text-decoration: none;
-            color: white;
-            margin-inline: 3vw;
-            transition: all 1s;
-        }
-        .menuLink:hover{
-            transform: scale(1.1);
-        }
-    
-       .flexImg{
-           width:50%;
-            margin: auto;
-       }
-       .gotoDiv{
-           color: rgb(42, 42, 141);
-           text-decoration: none;
-           text-shadow: 1px 1px 1px black;
-           transition: all 1s;
-        }
-        .gotoDiv:hover{
-            transform: scale(1.1)
-        }
-       @media(max-width: 800px){
-            .flexImg{
-                width: 60%;
-            }
-       }
-       .mainGrid {
-            display: grid;
-            width: 100vw;
-            height: 100vh;
-            grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
-            grid-template-rows: .6fr 1fr 3fr 1fr .4fr;
-            grid-template-areas:
-            'header header header header header'
-            'main main main main main '
-            'main main main main main '
-            'main main main main main '
-            'footer footer footer footer footer ';
-      }
-      #contentSubDiv{grid-area: content;}
-      #contentMenu{grid-area: contentMenu;}
-      .contentDiv{
-        overflow: auto;
-        align-items: flex-start;
-        display: grid;
-        width: 100%;
-        height: 100%;
-        grid-template-columns: 1fr 5fr;
-        grid-template-rows: 1fr;
-        grid-template-areas:
+.header {
+    font-size: 6vh;
+    color: red;
+    transition: all 1s;
+    cursor: default;
+}
+
+.header:hover {
+    transform: scale(1.1);
+}
+
+.header2 {
+    font-size: 4vh;
+    color: green;
+    margin-top: 8vh;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#header {
+    grid-area: header;
+    background-color: black;
+}
+
+/* #menu { grid-area: menu;   background-color: blue; } */
+#main {
+    grid-area: main;
+    background-color: white;
+}
+
+/*#right { grid-area: right; }*/
+#footer {
+    grid-area: footer;
+    background-color: black;
+    cursor: default;
+}
+
+.navbar {
+    justify-content: center;
+    flex-direction: row;
+    padding-right: 2vw;
+
+}
+
+.hoverLink {
+    text-decoration: none;
+    margin-inline: 3vw;
+    transition: all 1s;
+}
+
+.hoverLink:hover {
+    transform: scale(1.1);
+}
+.navLink{
+    color: white;
+}
+
+.flexImg {
+    width: 50%;
+    margin: auto;
+}
+
+.gotoDiv {
+    color: rgb(109, 146, 100);
+    text-decoration: none;
+    text-shadow: 1px 1px 1px black;
+    transition: all 2s;
+}
+
+.gotoDiv:hover {
+    transform: scale(1.1);
+}
+
+@media(max-width: 800px) {
+    .flexImg {
+        width: 60%;
+    }
+}
+
+.mainGrid {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+    grid-template-rows: .6fr 1fr 3fr 1fr .4fr;
+    grid-template-areas:
+        'header header header header header'
+        'main main main main main '
+        'main main main main main '
+        'main main main main main '
+        'footer footer footer footer footer ';
+}
+
+#contentSubDiv {
+    grid-area: content;
+}
+
+#contentMenu {
+    grid-area: contentMenu;
+}
+
+.contentDiv {
+    overflow: auto;
+    align-items: flex-start;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
         'contentMenu content '
         'contentMenu content ';
-      }
-      .contentMenu{
-        display: flex;
-        position: relative;
-        height: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        line-height: 20vh;
-      }
-      
-      .contentSubDiv{
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          text-align: center;
-          width: 80%;
-          margin: auto;
-          height: auto;
-          
-      }
-      @media screen and (max-width:900px){
-        .mainGrid {
-            grid-template-columns: 1fr 1fr 4fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 4fr 1fr .5fr;
-            grid-template-areas:
+}
+
+.contentMenu {
+    display: flex;
+    position: relative;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 20vh;
+}
+
+.contentSubDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    height: auto;
+
+}
+
+@media screen and (max-width:900px) {
+    .mainGrid {
+        grid-template-columns: 1fr 1fr 4fr 1fr 1fr;
+        grid-template-rows: .7fr 1.3fr 4fr 1fr .5fr;
+        grid-template-areas:
             'header header header header header'
             'main main main  main main'
             'main main main  main main'
             'main main main  main main'
             'footer footer footer footer footer';
-      }}
+    }
+    .contentDiv {   
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 7fr;
+        grid-template-areas:
+            'contentMenu '
+            'content ';
+    }
+
+    #testlinks{
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        line-height: 8vh;
+    }
+    
+}
