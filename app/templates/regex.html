@@ -1,0 +1,56 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="contentDiv" id="main">
+    <div class="contentMenu regexMenu" id="contentMenu">
+        <h1 class="header">Regex</h1>
+        <h4>Validação de strings</h4>
+        <p>Preencha o formulário para ver a tecnologia em ação. É bastante utilizada para este tipo de verificações.</p>
+        <p>Em ciência da computação, uma expressão regular ou "Regex" provê uma forma concisa e flexível de identificar cadeias de caracteres de interesse, como caracteres particulares, palavras ou padrões de caracteres</p>
+
+    </div>
+    <div class="contentSubDiv regexFormDiv">
+        <form action="/regex" method="POST" class="formDiv">
+            <div class="formSubDiv">
+                <div class="formInput"><label for="name">NOME:</label><br><input type="text" name="name" id="inputName" autofocus>
+                    {% if results %}
+                        <h4 class="resultRegex" id="resultName">{{results["name"]}}</h4>
+                    {% endif %}
+                </div>
+                <div class="formInput"><label for="number">NUMERO:</label><br><input type="text" name="number"
+                        id="inputNumber">
+                    {% if results %}
+                        <h4 class="resultRegex" id="resultNumber">{{results["number"]}}</h4>
+                    {% endif %}
+                </div>
+                <div class="formInput"><label for="email">EMAIL:</label><br><input type="text" name="email"
+                        id="inputEmail">
+                    {% if results %}
+                        <h4 class="resultRegex" id="resultEmail">{{results["email"]}}</h4>
+                    {% endif %}
+                </div>
+                <div class="formInput"><label for="postalCode">CODIGO POSTAL:</label><br><input type="text"
+                        name="postalCode" id="inputPostalCode">
+                    {% if results %}
+                        <h4 class="resultRegex" id="resultPostalCode">{{results["postalCode"]}}</h4>
+                    {% endif %}</div>
+                    <br>
+
+            </div>
+            <button class="btnSubmit">Submit</button>
+
+            <!-- <br>
+            <div class="formBtnDiv" id="btnFormsDiv">
+                <input type="submit" value="CHECK" id="btnCheckRegex"></input>
+            </div> -->
+
+
+        </form>
+
+    </div>
+</div>
+
+<script>
+  
+    </script>
+{% endblock %}

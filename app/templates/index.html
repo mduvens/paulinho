@@ -12,44 +12,48 @@
     <script src="https://kit.fontawesome.com/a9082643a6.js" crossorigin="anonymous"></script>
     <link type="text/css" rel="stylesheet" href="/static/css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap" rel="stylesheet"> 
-    <title>Street Workout</title>
+    <title>Final Project</title>
     <style>
-        html,body {
-            /* margin: 0 auto; */
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            text-shadow: 1px 1px 1px  black;
-            font-family: 'Muli',sans-serif !important;
-        }
+       
 
     </style>
+    <script src="/static/js/jquery-3.5.1.js"></script>
 </head>
+
 
 <body>
     <div class="mainGrid " id="gridC">
-        <div class="item navbar" id="header"> 
-            <a href="/" class="hoverLink navLink"><h1>Home</h1></a>
-            <a href="/plotTest" class="hoverLink navLink"><h1>Plot</h1></a>
+        <div class="navbar item" id="header"> 
+            <!-- <button class="navToggle" id="toggleNavbar">Open</button> -->
+         
+                <a href="/" class="hoverLink navLink"><h1>Home</h1></a>
+                <a href="/automato" class="hoverLink navLink"><h1>Automato</h1></a>
+                <a href="/regex" class="hoverLink navLink"><h1>Regex</h1></a>
+                <a href="/webscrap" class="hoverLink navLink"><h1>Webscrap</h1></a>
+                <a href="/about" class="hoverLink navLink"><h1>About</h1></a>
+                       
             
         </div>
         <!-- <div class="item" id="menu"> -->
           
-
         <!-- </div> -->
-        <div class="contentDiv" id="main"> 
-            {% block content %}
+        {% block content %}
 
-            {% endblock %}
-        </div>  
-        <!-- <div class="item" id="right"><h1>Right</h1></div> -->
-        <div class="item whiteText" id="footer">
+        {% endblock %}
+      
+
+        <div class="item " id="footer"> <!-- whiteText -->
            <h5> &copy; Uníversidade Lusíada de  Lisboa 2020 - Manuel Gonçalves</h5>
         </div>
       </div>
-
  
-
+      <script>
+          $("#toggleNavbar").click(() => {
+              if ($(".divNavLinks").hasClass("hide"))
+                $(".divNavLinks").removeClass("hide")
+              else $(".divNavLinks").addClass("hide")
+          })
+      </script>
 </body>
 
 </html>
