@@ -24,13 +24,13 @@
 <body>
     <div class="mainGrid " id="gridC">
         <div class="navbar item" id="header"> 
-            <!-- <button class="navToggle" id="toggleNavbar">Open</button> -->
+            <button class="navToggle" id="toggleNavbar">Open</button>
          
-                <a href="/" class="hoverLink navLink"><h1>Home</h1></a>
-                <a href="/automato" class="hoverLink navLink"><h1>Automato</h1></a>
-                <a href="/regex" class="hoverLink navLink"><h1>Regex</h1></a>
-                <a href="/webscrap" class="hoverLink navLink"><h1>Webscrap</h1></a>
-                <a href="/about" class="hoverLink navLink"><h1>About</h1></a>
+                <a href="/" class="hoverLink navLink hide"><h1>Home</h1></a>
+                <a href="/automato" class="hoverLink navLink hide"><h1>Automato</h1></a>
+                <a href="/regex" class="hoverLink navLink hide"><h1>Regex</h1></a>
+                <a href="/webscrap" class="hoverLink navLink hide"><h1>Webscrap</h1></a>
+                <a href="/about" class="hoverLink navLink hide"><h1>About</h1></a>
                        
             
         </div>
@@ -49,9 +49,9 @@
  
       <script>
           $("#toggleNavbar").click(() => {
-              if ($(".divNavLinks").hasClass("hide"))
-                $(".divNavLinks").removeClass("hide")
-              else $(".divNavLinks").addClass("hide")
+              if ($(".navLink").hasClass("hide"))
+                $(".navLink").removeClass("hide")
+              else $(".navLink").addClass("hide")
           })
       </script>
 </body>

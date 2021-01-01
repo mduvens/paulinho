@@ -1,10 +1,20 @@
 from app import app
-from app.models import test, regexpy, automatopy
+from app.models import test, regexpy, afd, scrap
 
 from flask import render_template,flash, url_for,Response,redirect, jsonify,request
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import io, requests, threading, random
 
+#import atexit
+import logging
+import sys
+import threading
+from apscheduler.schedulers.background import BackgroundScheduler
+
+scheduler = BackgroundScheduler()
+
+
+logging.basicConfig(level=logging.DEBUG)
 
 
 @app.route('/',methods=["POST","GET"])
@@ -14,7 +24,8 @@ def index():
 
 @app.route('/webscrap')
 def plots():
-    return render_template("webscrap.html")
+    tabelaClass = scrap.getScrapLigaNOS()
+    return render_template("webscrap.html", tabelaClass = tabelaClass)
 
 @app.route('/regex',methods=["GET","POST"])
 def regex():
@@ -23,22 +34,13 @@ def regex():
     else:       
         output = regexpy.checkRegex(request.form)
         return render_template("regex.html", results= output)
-# @app.route('/processInputs',methods=['POST'])
-# def processInputs():
-#         name = request.form["name"]
-#         number = regexpy.checkNumber(request.form["number"])
-#         email = regexpy.checkEmail(request.form["email"])
-#         postalCode = regexpy.checkPostal(request.form["postalCode"])
-#         if name and number and email and postalCode:
-#             return jsonify({"name":name,"number":number,"email":email,"postalCode":postalCode})
-#         else:
-#             return jsonify({"error": 'Missing data'})
+
 @app.route('/automato', methods = ["GET","POST"])
 def automato():
     if request.method == "GET":
         return render_template("automato.html")
     else:
-        output = automatopy.checkAutomato(request.form["sequencia"])
+        output = afd.checkAutomato(request.form["sequencia"])
         return render_template("automato.html", result = output)
 
 @app.route('/about')
@@ -48,14 +50,19 @@ def about():
 @app.route('/getPlot')
 def plot_png():
     values = test.getRandomAxis()
-    fig = test.create_figure(values[0],values[1])
+    gold = scrap.obterValorOil()
+    scrap.obterValorOil()
+    fig = test.create_figure(gold["valores"],gold["tempos"])
     output = io.BytesIO()
     FigureCanvas(fig).print_png(output)
     return Response(output.getvalue(), mimetype='image/png')
+
 
 @app.route('/getImage')
 def imageTest():
     return "<img class='flexImg'src='/getPlot' alt=''>"
 
 if __name__ == '__main__':
+    scheduler.start()
+    scheduler.add_interval_ob(scrap.obterValorOil, seconds=10)
     app.run(debug = True)

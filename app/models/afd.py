@@ -1,5 +1,3 @@
-
-
 def checkAutomato(sequencia):
     alfabeto = {"0","1"}
     estados = {"A","B","C","D"}

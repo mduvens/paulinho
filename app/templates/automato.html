@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 {% block content %}
-<div class="contentDiv" id="main">
+<div class="contentDivSplit" id="main">
     <div class="contentMenu automatoMenu">
         <h1 class="header">Autómatos Finitos Determinísticos</h1>
         <h4>Validação de uma sequência binária</h4>
@@ -16,7 +16,7 @@
             <div class="formSubDiv">
                 <div class="formInput">
                     <label for="sequencia">INSIRA A SEQUÊNCIA:</label><br><br><input type="text" name="sequencia"
-                        id="sequencia">
+                        id="sequencia" autofocus>
                     {% if result %}
                     <h3 id="resultadoAutomato">{{result}}</h3>
                     {% endif %}
