@@ -5,18 +5,9 @@ from flask import render_template,flash, url_for,Response,redirect, jsonify,requ
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import io, requests, threading, random
 
-#import atexit
-import logging
-import sys
 import threading
-from apscheduler.schedulers.background import BackgroundScheduler
 
-scheduler = BackgroundScheduler()
-
-
-logging.basicConfig(level=logging.DEBUG)
-
-
+gold = {}
 @app.route('/',methods=["POST","GET"])
 @app.route('/index',methods=["POST","GET"])
 def index():
@@ -50,8 +41,9 @@ def about():
 @app.route('/getPlot')
 def plot_png():
     values = test.getRandomAxis()
+    global gold
     gold = scrap.obterValorOil()
-    scrap.obterValorOil()
+    threading.Timer(10, scrap.obterValorOil).start()
     fig = test.create_figure(gold["valores"],gold["tempos"])
     output = io.BytesIO()
     FigureCanvas(fig).print_png(output)
@@ -61,8 +53,3 @@ def plot_png():
 @app.route('/getImage')
 def imageTest():
     return "<img class='flexImg'src='/getPlot' alt=''>"
-
-if __name__ == '__main__':
-    scheduler.start()
-    scheduler.add_interval_ob(scrap.obterValorOil, seconds=10)
-    app.run(debug = True)

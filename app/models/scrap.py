@@ -39,7 +39,7 @@ def getScrapLigaNOS():
     for i in range(len(teams)):
         finalDic[teams[i]] = {"jj": played[i],  'win': win[i], 'draw': draw[i], 'lost': lost[i],'scored': scored[i],'suffered': suffered[i],'points': points[i]}
     return finalDic
-
+    
 valores = []
 tempos = []
 
@@ -67,4 +67,3 @@ def addValores(tempos,valores,resp):
     t = time.localtime()
     current_time = time.strftime("%H:%M:%S", t)
     tempos += [current_time]
-      
