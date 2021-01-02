@@ -23,15 +23,28 @@
 
 <body>
     <div class="mainGrid " id="gridC">
-        <div class="navbar item" id="header"> 
-            <button class="navToggle" id="toggleNavbar">Open</button>
-         
-                <a href="/" class="hoverLink navLink hide"><h1>Home</h1></a>
-                <a href="/automato" class="hoverLink navLink hide"><h1>Automato</h1></a>
-                <a href="/regex" class="hoverLink navLink hide"><h1>Regex</h1></a>
-                <a href="/webscrap" class="hoverLink navLink hide"><h1>Webscrap</h1></a>
-                <a href="/about" class="hoverLink navLink hide"><h1>About</h1></a>
-                       
+        <div class="navbar " id="header"> 
+            <div class="navHead nav-transparent" id="navHead">
+                <div class="navLogo">
+                    <a href="/" class="hoverLink navLink hide">Compiladores</a>
+                </div>
+                <div class="navMenu">
+                    <button class="navToggle" id="toggleNavbar">Open</button>
+                    <a href="/" class="hoverLink navLink hide">Home</a>
+                    <a href="/automato" class="hoverLink navLink hide">Automato</a>
+                    <a href="/regex" class="hoverLink navLink hide">Regex</a>
+                    <a href="/webscrap" class="hoverLink navLink hide">Webscrap</a>
+                    <a href="/about" class="hoverLink navLink hide">About</a>
+                           
+                </div>
+            </div>
+           
+           <div class="navTitle">
+            {% block title %}
+
+            {% endblock %}
+           </div>
+            
             
         </div>
         <!-- <div class="item" id="menu"> -->
@@ -48,6 +61,18 @@
       </div>
  
       <script>
+        let vw,vh, headerSize
+        window.onscroll = function () { 
+            vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+            vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+            headerSize = 0.30 * vh
+            console.log(`WIDTH ${vw} HEIGTH ${vh}`)
+            "use strict";
+            var alpha = document.documentElement.scrollTop * 1/headerSize
+            if (alpha > 1) alpha = 1
+            $(".navHead").css('background-color', `rgba(0, 0, 0, ${alpha})`)
+        };
+
           $("#toggleNavbar").click(() => {
               if ($(".navLink").hasClass("hide"))
                 $(".navLink").removeClass("hide")

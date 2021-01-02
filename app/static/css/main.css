@@ -2,7 +2,7 @@ html,body {
     /* margin: 0 auto; */
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: auto;
     text-shadow: 1px 1px 1px  black;
     font-family: 'Muli',sans-serif !important;
     color: var(--text-color);
@@ -20,13 +20,15 @@ body a {
     --headers-background: #222831;
     --main-background: #393e46;
     --text-color: #eeeeee;
-    --header-color:#ffd369;
+    --header-color: whitesmoke;
 }
 ::-webkit-scrollbar {
     width: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: #393e46;
+    /* background: #393e46; */
+    background: whitesmoke;
+
 }
 ::-webkit-scrollbar-thumb {
     background: #222831;
@@ -45,7 +47,7 @@ body a {
 }
 
 .header {
-    font-size: 6vh;
+    font-size: 5vh;
     color: var(--header-color);
     transition: all 1s;
     cursor: default;
@@ -57,12 +59,12 @@ body a {
     color: white;
     margin: 2em 0 0 ;
 }
-.item {
+/* .item {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-}
+} */
 
 
 #header {
@@ -70,7 +72,6 @@ body a {
     background-color: var(--headers-background);
     color: var(--header-color);
 }
-
 
 #main {
     grid-area: main;
@@ -81,17 +82,60 @@ body a {
 
 #footer {
     grid-area: footer;
+    
     background-color: var(--headers-background);
+    display: flex;
+
+    /* margin-top: 10vh; */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     cursor: default;
 }
 
 .navbar {
-    justify-content: flex-end;
-    flex-direction: row;
-    padding-right: 2vw;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    width: 100%;
     font-size: 2vh;
+    background: url('../img/codeWallpaper.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
+
 }
 
+.navHead{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    position: fixed;
+    align-items: center;
+}
+.navTitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+}
+.navMenu{
+    display: flex;
+    width: 50%;
+    /* align-items: flex-end; */
+    justify-content: flex-end;
+    
+}
+.navLogo{
+    display: flex;
+    justify-content: flex-start;
+    width:  50%;
+}
+.navLink{
+    padding: 10px 0 10px;
+    /* background: tomato; */
+}
 .hoverLink {
     text-decoration: none;
     margin-inline: 2vw;
@@ -123,10 +167,10 @@ body a {
 
 .mainGrid {
     display: grid;
-    width: 100vw;
-    height: 100vh;
-    grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows: .6fr 5fr .4fr;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: auto;
+    grid-template-rows: 40vh 55vh 5vh;
     grid-template-areas:
         'header header header header header'
         'main main main main main '
@@ -280,20 +324,16 @@ label{
     .contentFlexDiv{
         flex-direction: column;
     }
-    .contentFlexDiv div{
-        flex: 0 0 50%;   
-    }
     .flexImg {
         width: 60%;
     }
     .navbar {
-        justify-content: center;
-        align-items: center;
+        display: flex;
         flex-direction: column;
     }
-    /* .navLink{
-        display: none;
-    } */
+    .navMenu{
+        flex-direction: column;
+    }
    .navToggle{
        display: flex;
    }

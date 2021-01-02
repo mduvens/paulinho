@@ -1,17 +1,14 @@
 {% extends "index.html" %}
+{% block title %}
+<h1 class="header">Autómatos Finitos Determinísticos</h1>
+
+{% endblock%}
+
 {% block content %}
 <div class="contentDivSplit" id="main">
     <div class="contentMenu automatoMenu">
-        <h1 class="header">Autómatos Finitos Determinísticos</h1>
         <h4>Validação de uma sequência binária</h4>
         <p>Introduza uma sequêcia binária que começe e acabe em 0.</p>
-        <p>Na Teoria dos autômatos, um sub-tópico da Ciência da computação teórica, um autômato finito determinístico —
-            também chamado máquina de estados finita determinística —
-            é uma Máquina de estados finita que aceita ou rejeita cadeias de símbolos gerando um único ramo de
-            computação para cada cadeia de entrada."</p>
-    </div>
-
-    <div class="contentSubDiv">
         <form action="/automato" method="POST" class="">
             <div class="formSubDiv">
                 <div class="formInput">
@@ -24,8 +21,16 @@
             </div>
             <button class="btnSubmit" type="submit">Submit</button>
         </form>
+       
+    </div>
 
+    <div class="contentSubDiv">
+       
 
+        <p>Na Teoria dos autômatos, um sub-tópico da Ciência da computação teórica, um autômato finito determinístico —
+            também chamado máquina de estados finita determinística —
+            é uma Máquina de estados finita que aceita ou rejeita cadeias de símbolos gerando um único ramo de
+            computação para cada cadeia de entrada."</p>
 
 
     </div>
