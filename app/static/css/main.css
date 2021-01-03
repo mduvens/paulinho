@@ -87,10 +87,11 @@ body {
 }
 
 .navLogo{
-   font-size: 1.1em;
+   font-size: 1.3em;
    text-align: center;
    display: flex;
    justify-content: flex-start;
+   cursor: default;
 }
 
 .navToggle{
@@ -106,6 +107,7 @@ body {
     display: flex;
     flex-direction: column ;
     width: 100%;
+    height: 100%;
     text-align: center;
     margin: auto;
     margin-bottom: 5vh;
@@ -166,6 +168,7 @@ body {
     font-size: 2em;
 
 }
+
 .rowHeaders > *{
     padding: 1vw;
 }
@@ -179,6 +182,9 @@ body {
 }
 
 @media screen and (max-width: 850px){
+    .footerText{
+        font-size: 1.5vh;
+    }
     .flexImg{
         width: 100%;
     }
