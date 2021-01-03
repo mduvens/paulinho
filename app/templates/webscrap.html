@@ -1,78 +1,80 @@
 {% extends "index.html" %}
-
+{% block title %}
+    <h1 class="header">Webscraping with BeautifulSoup4</h1>
+{% endblock %}
 
 {% block content %}
-<div id="main">
-    <div class="contentFlexDiv"> 
-        <div class="divInfoLigaNOS" id="divInfoLigaNOS">
-            <h1 class="header"> Liga NOS 2020/2021 </h1>
-            <h3 class="header2">Classificações em tempo real</h3>
-    
-        </div>
+    <div class="scrapGrid">
+        <div class="scrapMainDiv">
+            <div class="divInsideScrap " id="divInfoLigaNOS">
+                <h1 class="header"> Classificações em tempo real</h1>
        
-        <div class="divLigaNOS" id="plot1">
-    
-            <div class="responseDiv"> 
-            <h1 class="header">Classificações</h1>
-    
-                <table>
-                    <!-- {% if tabelaClass %} -->
-                    <tr class="rowHeaders">
-                        <td></td>
-                        <td>JJ</td>
-                        <td>V</td>
-                        <td>E</td>
-                        <td>D</td>
-                        <td>GM</td>
-                        <td>GS</td>
-                        <td>P</td>
-                    </tr>
-                    {% for equipa in tabelaClass %}
-                        <tr>
-                            <td class="scrapEquipa">{{equipa}}</td>
-                            <td>{{tabelaClass[equipa]['jj']}}</td>
-                            <td>{{tabelaClass[equipa]['win']}}</td>
-                            <td>{{tabelaClass[equipa]['draw']}}</td>
-                            <td>{{tabelaClass[equipa]['lost']}}</td>
-                            <td>{{tabelaClass[equipa]['scored']}}</td>
-                            <td>{{tabelaClass[equipa]['suffered']}}</td>
-                            <td>{{tabelaClass[equipa]['points']}}</td>
-                        </tr>
-                    {% endfor %}
-    
-                    <!-- {% endif %} -->
-    
-                </table>
-                <!-- <h5>{{tabelaClass}}</h5> -->
-                <!-- <img class="flexImg" src="/getPlot" alt="P2"> -->
-    
+        
             </div>
-            <!-- <div class="plotButton">
-                <a id="btnRefresh" ><button >REFRESH</button></a>
-    
-            </div>  -->
+           
+            <div class="divInsideScrap " id="plot1">
+        
+                <div class="responseDiv"> 
+                <h1 class="header"> Liga NOS 2020/2021</h1>
+        
+                    <table>
+                        <!-- {% if tabelaClass %} -->
+                        <tr class="rowHeaders">
+                            <td></td>
+                            <td>JJ</td>
+                            <td>V</td>
+                            <td>E</td>
+                            <td>D</td>
+                            <td>GM</td>
+                            <td>GS</td>
+                            <td>P</td>
+                        </tr>
+                        {% for equipa in tabelaClass %}
+                            <tr>
+                                <td class="scrapEquipa">{{equipa}}</td>
+                                <td>{{tabelaClass[equipa]['jj']}}</td>
+                                <td>{{tabelaClass[equipa]['win']}}</td>
+                                <td>{{tabelaClass[equipa]['draw']}}</td>
+                                <td>{{tabelaClass[equipa]['lost']}}</td>
+                                <td>{{tabelaClass[equipa]['scored']}}</td>
+                                <td>{{tabelaClass[equipa]['suffered']}}</td>
+                                <td>{{tabelaClass[equipa]['points']}}</td>
+                            </tr>
+                        {% endfor %}
+        
+                        <!-- {% endif %} -->
+        
+                    </table>
+                    <!-- <h5>{{tabelaClass}}</h5> -->
+                    <!-- <img class="flexImg" src="/getPlot" alt="P2"> -->
+        
+                </div>
+                <!-- <div class="plotButton">
+                    <a id="btnRefresh" ><button >REFRESH</button></a>
+        
+                </div>  -->
+            </div>
         </div>
+        <div class="scrapMainDiv" id="scrapGoldDiv">
+            <div class="divInsideScrap " id="divInfoPlot">
+                <h3>Preço do ouro em tempo real. Gráfico gerado através do Matplotlib. </h3>
+        
+            </div>
+    
+            <div class="divInsideScrap " id="plot2">
+                <h1 class="header">Live Gold Price</h1>
+                <div class="response2">
+                <img class="flexImg" src="/getPlot" alt="P1">
+                </div>
+                <a id="btnRefresh2" ><button >REFRESH</button></a>
+            </div>
+           
+        </div>
+           
       
     
-    
-    
-    </div>     
-    <div class="contentFlexDiv"> 
-        <div class="divPlotGold" id="plot2">
-            <h1 class="header">P2</h1>
-            <div class="response2">
-            <img class="flexImg" src="/getPlot" alt="P1">
-            </div>
-            <a id="btnRefresh2" ><button >REFRESH</button></a>
-        </div>
-        <div class="divInfoLigaNOS" id="divInfoPlot">
-            <h1 class="header"> Live Gold Price</h1>
-            <h3>Preço do ouro em tempo real. Gráfico gerado através do Matplotlib. </h3>
-    
-        </div>
-
     </div>
-</div>
+
 
         <script>
             

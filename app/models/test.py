@@ -18,12 +18,12 @@ def getRandomAxis():
 
 def create_figure(x,y):
     fig = Figure()   
-    ax = fig.add_subplot(2,2,1)
-    ax.set(xlabel='time (s)', ylabel='value ($)', title='Gold Price')
-    ax.grid()
-    ax.grid(False)
-    ax.plot(x,y)
-    ax2 = fig.add_subplot(2,2,2)
+    # ax = fig.add_subplot(2,2,1)
+    # ax.set(xlabel='time (s)', ylabel='value ($)', title='Gold Price')
+    # ax.grid()
+    # ax.grid(False)
+    # ax.plot(x,y)
+    ax2 = fig.add_subplot(1,1,1)
     ax2.set(xlabel='time (s)', ylabel='value ($)', title='Gold Price')
     ax2.grid()
     ax2.grid(False)
